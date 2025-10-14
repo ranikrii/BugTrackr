@@ -11,3 +11,6 @@ pytest-asyncio
 httpx
 asyncpg
 python-dotenv
+pydantic-settings
+python-multipart
+bcrypt==4.0.1
