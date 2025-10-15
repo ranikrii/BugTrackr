@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 from app.db import Base, engine
 from app.api.routes import router
-from app.models import Base  # make sure models are imported before create_all()
+from app.models import Base  # import models before create_all()
 
-# Initialize FastAPI app
 app = FastAPI(title="Bug Tracker")
 
-# Create database tables
+# Creating db table
 Base.metadata.create_all(bind=engine)
 
-# Include all routers (your CRUD routes)
+# Including all routers (CRUD routes)
 app.include_router(router)
 
 @app.get("/")

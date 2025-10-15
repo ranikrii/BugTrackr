@@ -2,9 +2,7 @@ from sqlalchemy.orm import Session
 from app import models, schemas
 from app.db import get_db
 
-
-# user helpers
-
+# user 
 
 def create_user(db: Session, user_in: schemas.UserCreate):
     from app.auth import get_password_hash 
@@ -16,12 +14,8 @@ def create_user(db: Session, user_in: schemas.UserCreate):
     return user
 
 
-
-
 def get_user_by_username(db: Session, username: str):
     return db.query(models.User).filter(models.User.username == username).first()
-
-
 
 
 def get_user(db: Session, user_id: int):
