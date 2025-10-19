@@ -20,6 +20,3 @@ init_sentry()
 async def root():
     return {"message": "Hello! Welcome to Bug Tracker API"}
 
-@app.get("/debug-sentry")
-async def trigger_error():
-    division_by_zero = 1 / 0
