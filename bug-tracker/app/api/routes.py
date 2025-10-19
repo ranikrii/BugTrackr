@@ -77,3 +77,7 @@ def update_status(
         raise HTTPException(403, 'Forbidden')
     return crud.update_issue_status(db, issue_id, status_in.status)
 
+@router.get("/debug-sentry")
+async def trigger_error():
+    division_by_zero = 1 / 0
+
